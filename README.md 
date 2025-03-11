@@ -1,0 +1,27 @@
+# SAP-1 (Simple As Possible 1)
+
+El SAP-1 (Simple As Possible 1) es un modelo educativo de computadora diseñado para enseñar los conceptos básicos de la arquitectura de computadoras y la programación a nivel de hardware. Este modelo es una simplificación extrema de una computadora real, pero incluye todos los componentes esenciales para entender cómo funciona una computadora.
+
+## Componentes Principales
+
+- **Unidad de Control (Control Unit)**: Dirige las operaciones del procesador.
+- **Contador de Programa (Program Counter)**: Mantiene la dirección de la siguiente instrucción a ejecutar.
+- **Memoria (Memory)**: Almacena instrucciones y datos.
+- **Registro de Instrucción (Instruction Register)**: Almacena la instrucción actual que se está ejecutando.
+- **Registro de Dirección de Memoria (Memory Address Register)**: Almacena la dirección de la memoria que se está accediendo.
+- **Registro de Datos de Memoria (Memory Data Register)**: Almacena los datos que se están leyendo o escribiendo en la memoria.
+- **Acumulador (Accumulator)**: Almacena los resultados de las operaciones aritméticas y lógicas.
+- **Unidad Aritmética y Lógica (Arithmetic Logic Unit, ALU)**: Realiza operaciones aritméticas y lógicas.
+- **Bus**: Sistema de comunicación que transfiere datos entre los componentes.
+
+## Ciclo de Instrucción
+
+El SAP-1 sigue un ciclo de instrucción básico que consta de las siguientes fases:
+
+1. **Fetch**: Obtener la instrucción de la memoria.
+2. **Decode**: Decodificar la instrucción.
+3. **Execute**: Ejecutar la instrucción.
+
+## Ejemplo de Programa
+
+A continuación se muestra un ejemplo de un programa simple para el SAP-1 que suma dos números:
