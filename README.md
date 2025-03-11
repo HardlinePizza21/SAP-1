@@ -14,43 +14,40 @@ El SAP-1 (Simple As Possible 1) es un modelo educativo de computadora diseñado 
 - **Unidad Aritmética y Lógica (Arithmetic Logic Unit, ALU)**: Realiza operaciones aritméticas y lógicas.
 - **Bus**: Sistema de comunicación que transfiere datos entre los componentes.
 
-## Funcionamiento general(Como programarlo)
+## Funcionamiento general (Cómo programarlo)
 
-En memoria se alamacenan las instrucciones y los valores, se ve algo tal que asi,
-![alt text](image.png)
+En memoria se almacenan las instrucciones y los valores, se ve algo tal que así,
+![alt text](readmeImages/image.png)
 
-Cada par de numeros representa un byte en hexadecimal, se tiene una memoria de 16 bytes, cada byte puede ser una instruccion o un numero, por ejemplo en este ejemplo el primer byte (arriba-derecha) ***0E*** es una instruccion, donde ***0*** indica la instruccion ***LDA*** y ***E*** indica la posicion de memoria donde esta el numero que tiene que cargar en el acomulador A. Hay 16 posiciones de memoria y por ejemplo la ***E*** es la posicion 15 y adentro tiene el numero en *71* en hexadecimal que en decimal es *113*, este SAP hace la siguiente operacion ***A = A + B*** o ***A = A - B*** donde los posibles valores del resultado son ***-255 < A < 255***, para numero negativos el hexadecimal resultante debe ser pasado a un binaro y este representa el ***complemento a dos***.
+Cada par de números representa un byte en hexadecimal, se tiene una memoria de 16 bytes, cada byte puede ser una instrucción o un número, por ejemplo en este ejemplo el primer byte (arriba-derecha) `0E` es una instrucción, donde `0` indica la instrucción `LDA` y `E` indica la posición de memoria donde está el número que tiene que cargar en el acumulador A. Hay 16 posiciones de memoria y por ejemplo la `E` es la posición 15 y adentro tiene el número en `71` en hexadecimal que en decimal es `113`, este SAP hace la siguiente operación `A = A + B` o `A = A - B` donde los posibles valores del resultado son `-255 < A < 255`, para números negativos el hexadecimal resultante debe ser pasado a un binario y este representa el `complemento a dos`.
 
 ### Set Up
 
 Este es proyecto de proteus:  
-![alt text](image-1.png)
+![alt text](readmeImages/image-1.png)
 (SAP-1.pdsprj)
 
-En al hoja hija de la "RAM" encontraremos un 2732 al cual hay que cargarle un binario, que contiene el programa 
-![alt text](image-2.png)
+En la hoja hija de la "RAM" encontraremos un 2732 al cual hay que cargarle un binario, que contiene el programa 
+![alt text](readmeImages/image-2.png)
 
 Para esto se puede crear un .txt, en mi caso, memoria.txt que tenga la siguiente estructura, 
-![alt text](image-3.png)
+![alt text](readmeImages/image-3.png)
 
-Este txt contiene el programa para saber como estan definidas las instrucciones [ver](#operaciones-del-SAP-1)
+Este txt contiene el programa para saber cómo están definidas las instrucciones [ver](#operaciones-del-SAP-1)
 
-El comando que permite convertir este .txt con formato hexadecimal en un binario que es combatible con la "RAM
-es:
+El comando que permite convertir este .txt con formato hexadecimal en un binario que es compatible con la "RAM" es:
 ```xxd -r -p memoria.txt memoria.bin``` 
 
-Cargas este archivo `memoria.bin` en la opción `image file` de aqui 
-![alt text](image-4.png) 
+Cargas este archivo `memoria.bin` en la opción `image file` de aquí 
+![alt text](readmeImages/image-4.png) 
 
-Despues vas el hoja hija del `Instruction Register & Control Unit` y vas a ver esto:
-![alt text](image-5.png)
+Después vas a la hoja hija del `Instruction Register & Control Unit` y vas a ver esto:
+![alt text](readmeImages/image-5.png)
 
-Tienes que compilar el codigo de arduino que esta en el repositorio, y buscar donde quedo el .ino.hex para despues cargarlo en el arduino.
-![alt text](image-6.png)
+Tienes que compilar el código de arduino que está en el repositorio, y buscar dónde quedó el .ino.hex para después cargarlo en el arduino.
+![alt text](readmeImages/image-6.png)
 
-Haces doble click en el *ATMEGA2560* y en la opcion `program file` cargas la ruta del paso anterior.
-
-
+Haces doble click en el *ATMEGA2560* y en la opción `program file` cargas la ruta del paso anterior.
 
 ## Operaciones del SAP-1
 
@@ -95,4 +92,4 @@ En este ejemplo, el programa realiza las siguientes operaciones:
 
 Estas operaciones básicas permiten entender cómo funciona el procesamiento de instrucciones en el SAP-1 y cómo se pueden combinar para realizar tareas más complejas.
 
-### Recordar que primero van las instrucciones y que las variables pueden ser leidas como instrcciones lo cual puede entorpecer la ejecucion del programa, para esto despues de las instrucciones usar HLT.
+### Recordar que primero van las instrucciones y que las variables pueden ser leídas como instrucciones lo cual puede entorpecer la ejecución del programa, para esto después de las instrucciones usar HLT.
